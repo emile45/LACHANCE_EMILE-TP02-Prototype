@@ -1,37 +1,12 @@
 fileFormatVersion: 2
-guid: f6ea3d5869b87064e987c120103af1fc
+guid: 0aa8079041fba9a468923dd7c82f6e74
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: VanguardBodyMat
-    second: {fileID: 2100000, guid: 429627b74c7d6024bbe09dcd71b6be4f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Vanguard_VisorMat
-    second: {fileID: 2100000, guid: 1b894d980c591314dadfa4ae18b837fd, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: vanguard_diffuse
-    second: {fileID: 2800000, guid: a36b5de59cbf7fe4a96f3cff29839e0d, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: vanguard_normal
-    second: {fileID: 2800000, guid: 799724dd28cd9c446b27de4d8a09e2fb, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: vanguard_specular
-    second: {fileID: 2800000, guid: 33f0ea66bdc689f429212d2a90eac959, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -96,8 +71,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - d602d642af09edf40bcdd6d1add69846
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3

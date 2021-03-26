@@ -13,6 +13,10 @@ public class RbCharacterMovements : MonoBehaviour
     // Transform de la position des pieds
     public Transform feetPosition;
 
+    public Camera mainCam;
+    public Camera aimCam;
+
+
     private float inputVertical;
     private float inputHorizontal;    
 
@@ -30,6 +34,8 @@ public class RbCharacterMovements : MonoBehaviour
 
     private float lerpSpeed = 0.08f;
 
+    public bool isAiming=false;
+
     //Suis-je entrain de bouger ?
     bool isMoving;
 
@@ -40,6 +46,7 @@ public class RbCharacterMovements : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         animatorVanguard = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -89,11 +96,18 @@ public class RbCharacterMovements : MonoBehaviour
             rb.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
         }
 
-        //Dance
-        if (Input.GetKeyDown(KeyCode.G) && !isMoving)
+        // Viser
+        if (Input.GetMouseButtonDown(1))
         {
-            animatorVanguard.SetTrigger("Dance");
+            Aim();
         }
+        if (Input.GetMouseButtonUp(1))
+        {
+            stopAim();
+        }
+
+        // Regarder vers le haut / bas en visant
+
     }
 
     private void FixedUpdate()
@@ -101,4 +115,19 @@ public class RbCharacterMovements : MonoBehaviour
         // Déplacer le personnage selon le vecteur de direction
         rb.MovePosition(rb.position + moveDirection.normalized * speed * Time.fixedDeltaTime);
     }
+    void Aim()
+    {
+        aimCam.enabled = true;
+        mainCam.enabled = false;
+        animatorVanguard.SetTrigger("Aiming");
+        isAiming = true;
+    }
+    void stopAim()
+    {
+        aimCam.enabled = false;
+        mainCam.enabled = true;
+        animatorVanguard.SetTrigger("StopAim");
+        isAiming = false;
+    }
+
 }
