@@ -117,6 +117,7 @@ public class RbCharacterMovements : MonoBehaviour
     }
     void Aim()
     {
+        // Changer pour la camera de visé
         aimCam.enabled = true;
         mainCam.enabled = false;
         animatorVanguard.SetTrigger("Aiming");
@@ -124,6 +125,7 @@ public class RbCharacterMovements : MonoBehaviour
     }
     void stopAim()
     {
+        // Changer pour la camera principale
         aimCam.enabled = false;
         mainCam.enabled = true;
         animatorVanguard.SetTrigger("StopAim");
