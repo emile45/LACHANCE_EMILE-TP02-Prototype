@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     public float explosionRadius;
     public float explosionFoce;
 
+    //Déclaration de la Source Audio et le système de particule
     public AudioSource audioSrcGun;
     public ParticleSystem psGunFire;
 
@@ -21,6 +22,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+            // Activation des particules et bruit pour le tir
             audioSrcGun.Play();
             psGunFire.Play();
         }
@@ -41,6 +43,7 @@ public class Weapon : MonoBehaviour
         }
 
     }
+    // Aout du gizmo visible seulement sur l'editor
     void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;

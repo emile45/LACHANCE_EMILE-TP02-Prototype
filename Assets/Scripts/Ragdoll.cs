@@ -10,7 +10,8 @@ public class Ragdoll : MonoBehaviour
     bool isDead;
 
     public bool debugKill;
-
+    
+    // Déclaration de la source audio pour le bruit de mort PNJ
     public AudioSource dyingAudioSrc;
 
     // Start is called before the first frame update
@@ -46,6 +47,7 @@ public class Ragdoll : MonoBehaviour
 
     void toggleRagdoll(bool value)
     {
+        // Si la valeur est vrai, le PNJ est mort, donc on fait jouer le bruit de mort
         if(value)
             dyingAudioSrc.Play();
         // Mettre le Kinematic à !value

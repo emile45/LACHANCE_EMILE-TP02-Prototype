@@ -34,6 +34,7 @@ public class RbCharacterMovements : MonoBehaviour
 
     private float lerpSpeed = 0.08f;
 
+    // Booléen pour savoir si le personnage vise
     public bool isAiming=false;
 
     //Suis-je entrain de bouger ?
@@ -120,6 +121,7 @@ public class RbCharacterMovements : MonoBehaviour
         // Changer pour la camera de visé
         aimCam.enabled = true;
         mainCam.enabled = false;
+        // Change l'animation et le bool pour le visé
         animatorVanguard.SetTrigger("Aiming");
         isAiming = true;
     }
@@ -128,6 +130,7 @@ public class RbCharacterMovements : MonoBehaviour
         // Changer pour la camera principale
         aimCam.enabled = false;
         mainCam.enabled = true;
+        // Change l'animation et le bool pour l'arrêt de visé
         animatorVanguard.SetTrigger("StopAim");
         isAiming = false;
     }
